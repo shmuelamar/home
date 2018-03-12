@@ -8,7 +8,7 @@
 	default = simple
 [alias]
     # one-line log
-    l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    l = log --pretty=format:"%C(yellow)%h\\ %ad\\ %C(green)%G?\\ %GK%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 
     a = add
     ap = add -p
@@ -16,11 +16,11 @@
     ca = commit -a --verbose
     cm = commit -m
     cam = commit -a -m
-    #m = commit --amend --verbose
 
     d = diff
     ds = diff --stat
     dc = diff --cached
+    dh = diff HEAD
 
     s = status -s -uno
     st = status
@@ -31,4 +31,5 @@
 
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
-
+[commit]
+    gpgsign = true
